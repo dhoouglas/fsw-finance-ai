@@ -16,7 +16,7 @@ import PercentageItem from "./percentage-tem";
 
 const chartConfig = {
   [TransactionType.INVESTMENT]: {
-    label: "Investimento",
+    label: "Investido",
     color: "#FFFFFF",
   },
   [TransactionType.DEPOSIT]: {
@@ -60,7 +60,7 @@ const TransactionsPieChart = ({
     },
   ];
   return (
-    <Card className="flex flex-col p-12">
+    <Card className="flex flex-col p-6">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
@@ -79,6 +79,7 @@ const TransactionsPieChart = ({
             />
           </PieChart>
         </ChartContainer>
+
         <div className="space-y-3">
           <PercentageItem
             icon={<TrendingUpIcon size={16} className="text-primary" />}
