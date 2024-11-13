@@ -20,6 +20,8 @@ export const generateAiReport = async ({ month }: GenerateAiReportSchema) => {
   if (!hasPremiumPlan) {
     throw new Error("You need a premium plan to generate AI reports");
   }
+
+  // Solução quando não tem token na api da open ai
   if (!process.env.OPENAI_API_KEY) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     return DUMMY_REPORT;
